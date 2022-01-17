@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_cv_pkg</name>
+  <version>0.0.0</version>
+  <description>The ros_cv_pkg converts ros image into opencv image</description>
+
+  <maintainer email="rkdms4031@unist.ac.kr">root</maintainer>
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <export>
+  </export>
+  
+  <depend>roscpp</depend>
+  <depend>mavros_msgs</depend>
+  
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+</package>
