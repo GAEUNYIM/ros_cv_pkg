@@ -13,12 +13,14 @@ from cv_bridge import CvBridge, CvBridgeError
 class image_converter:
 
 	def __init__(self):
+		print("<__init__>")
 		self.image_pub = rospy.Publisher("/gaeun/usb_cam/image_raw_2", Image)
 		self.bridge = CvBridge()
 		self.image_sub = rospy.Subscriber("/gaeun/usb_cam/image_raw", Image, self.callback)
 		# Q. Why the subscriber is defined later than the publisher? No maters?
 		
 	def callback(self, data):
+		print("<callback>")
 		try:
 			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
 		except CvBridgeError as e:
@@ -38,6 +40,7 @@ class image_converter:
 		
 def main(args):
 	ic = image_converter()
+	print("<0>")
 	rospy.init_node('image_converter', anonymous=True)	
 	try:
 		rospy.spin()
